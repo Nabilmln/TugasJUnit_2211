@@ -67,8 +67,22 @@ public class MainActivityTest {
     }
 
     /*
-     * Test Case 1: Menguji penambahan catatan baru
-     */
+    * Test Case 1: Menguji Penambahan Catatan Baru
+    * Tujuan: Memastikan bahwa catatan dapat ditambahkan ke RecyclerView dengan benar setelah pengguna memasukkan judul dan konten.
+    *
+    * Langkah-langkah pengujian:
+    * 1. Masukkan teks "Judul Test" pada input judul.
+    * 2. Masukkan teks "Isi Test" pada input konten.
+    * 3. Klik tombol tambah untuk menyimpan catatan.
+    * 4. Tunggu beberapa saat untuk memastikan UI diperbarui.
+    * 5. (Opsional) Verifikasi toast "Catatan berhasil ditambahkan" (dilewati karena sulit diuji secara otomatis).
+    * 6. Pastikan RecyclerView ditampilkan.
+    * 7. Pastikan tampilan "Tidak ada catatan" disembunyikan.
+    * 8. Pastikan RecyclerView memiliki tepat 1 item.
+    * 9. Pastikan judul catatan yang ditambahkan tampil dalam daftar.
+    * 10. Pastikan isi catatan yang ditambahkan tampil dalam daftar.
+    */
+
     @Test
     public void testAddNote() {
         // Memasukkan judul catatan
@@ -113,7 +127,18 @@ public class MainActivityTest {
     }
 
     /*
-     * Test Case 2: Menguji validasi input saat menambahkan catatan
+     * Test Case 2: Menguji Validasi Input Saat Menambahkan Catatan
+     * Tujuan: Memastikan bahwa catatan tidak dapat ditambahkan jika input judul atau konten kosong.
+     *
+     * Langkah-langkah pengujian:
+     * 1. Klik tombol tambah tanpa memasukkan judul dan konten.
+     * 2. Tunggu beberapa saat untuk memastikan validasi berjalan.
+     * 3. (Opsional) Verifikasi toast "Judul dan konten tidak boleh kosong" (dilewati).
+     * 4. Pastikan RecyclerView tetap kosong.
+     * 5. Masukkan hanya judul tanpa konten, lalu klik tombol tambah.
+     * 6. Tunggu dan pastikan RecyclerView tetap kosong.
+     * 7. Hapus judul, masukkan hanya konten, lalu klik tombol tambah.
+     * 8. Tunggu dan pastikan RecyclerView tetap kosong.
      */
     @Test
     public void testInputValidation() {
